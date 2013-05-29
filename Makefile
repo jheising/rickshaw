@@ -63,11 +63,11 @@ rickshaw.css: $(CSS_FILES)
 	cat $(CSS_FILES) > rickshaw.css
 
 rickshaw.js: $(JS_FILES) $(JS_HINT)
-	$(JS_HINT) src/js
+	'$(JS_HINT)' src/js
 	cat $(JS_FILES) > rickshaw.js
 
 rickshaw.min.css: $(CSS_MIN) rickshaw.css
-	$(CSS_MIN) rickshaw.css > rickshaw.min.css
+	'$(CSS_MIN)' rickshaw.css > rickshaw.min.css
 
 rickshaw.min.js: $(JS_MIN) rickshaw.js
-	$(JS_MIN) --reserved-names "\$$super" rickshaw.js > rickshaw.min.js
+	'$(JS_MIN)' --reserved-names "\$$super" rickshaw.js > rickshaw.min.js
